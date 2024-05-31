@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>AGRICULTURAL DECISION SUPPORT SYSTEM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style type="text/css">
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: url("https://c0.wallpaperflare.com/preview/154/907/657/paddy-field-paddy-crop-agriculture-paddy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Custom CSS for setting a fixed height for images */
+  .service-image {
+    height: 200px; /* Adjust as needed */
+  }
+</style>
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="text-center">
+        <h2>Crop Yield Suggestion</h2>
+      </div>
+      <hr/>
+      <form action="/index" method="POST">
+        <div class="form-group">
+          <label for="feedback1">Region Name</label>
+          <input type="text" required name="feedback1" class="form-control" placeholder="Enter Region Name">
+        </div>
+        <div class="form-group">
+          <label for="attendance">Season</label>
+          <select class="custom-select" name="attendance" required>
+            <option value="">Choose a Level</option>
+            <option value="0">Autumn</option>
+            <option value="1">Kharif</option>
+            <option value="2">Rabi</option>
+            <option value="3">Summer</option>
+            <option value="4">Whole Year</option>
+            <option value="5">Winter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="feedback">Yield Production Level</label>
+          <input type="float" required name="feedback" class="form-control" placeholder="Enter Production Value">
+        </div>
+        <div class="form-group">
+          <label for="overtime">Crop Name</label>
+          <select class="custom-select" name="overtime" required>
+            <option value="">Choose a Level</option>
+            <option value="0">Bajra</option>
+            <option value="1">Coconut</option>
+            <option value="2">Cotton - Lint</option>
+            <option value="3">Groundnut</option>
+            <option value="4">Jowar</option>
+            <option value="5">Maize</option>
+            <option value="6">Moong - Green Gram</option>
+            <option value="7">Niger Seeds</option>
+            <option value="8">Paddy</option>
+            <option value="9">Ragi</option>
+            <option value="10">Rice</option>
+            <option value="11">Sesamum</option>
+            <option value="12">Soyabean</option>
+            <option value="13">Sugarcane</option>
+            <option value="14">Sunflower</option>
+            <option value="15">Tur</option>
+            <option value="16">Urad</option>
+            <option value="17">Wheat</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Predict</button>
+        <a class="btn btn-danger btn-block" href="/">Clear</a>
+      </form>
+      <div class="text-center">
+        <h4 style="color: white;">Other Services:</h4>
+        <p style="color: white;">Explore other services which supports you in making a good decision!!!!!!!!!!</p>
+        <div class="row">
+          <div class="col-md-4">
+            <a href="/index">
+              <img src="https://geneticliteracyproject.org/wp-content/uploads/2018/01/cornharvestdfp01-1.jpg" class="img-fluid service-image" alt="Fertilizer Recommendation">
+              <p style="color: yellow;"><b>CROP YIELD</b></p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="/index1">
+              <img src="https://techbaji.com/wp-content/uploads/2020/03/How-AI-is-Transforming-Agriculture.jpg" class="img-fluid service-image" alt="Crop Recommendation">
+              <p style="color: yellow;"><b>CROP RECOMMENDATION</b></p>
+            </a>
+          </div>
+         
+          <div class="col-md-4">
+            <a href="/fertilizer">
+              <img src="https://plantinfo.co.za/wp-content/uploads/2015/11/1.jpg" class="img-fluid service-image" alt="Crop Yield Prediction">
+              <p style="color: yellow;"><b>FERTILIZER RECOMMENDATION</b></p>
+            </a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+</body>
+</html>

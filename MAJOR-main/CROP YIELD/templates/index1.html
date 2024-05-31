@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Crop Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style type="text/css">
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-image: url("https://image.freepik.com/free-photo/plant-growth-farm-with-sunlight-background_34152-2006.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Adjust text color */
+  }
+
+  .container {
+    padding-top: 50px; /* Adjust spacing from the top */
+  }
+
+  /* Style for form labels */
+  label {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Style for form inputs */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    color: purple; /* Input text color */
+    font-weight: bold
+  }
+
+  /* Style for buttons */
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Style for primary button */
+  .btn-primary {
+    background-color: #28a745; /* Green color */
+    color: white;
+  }
+
+  /* Style for danger button */
+  .btn-danger {
+    background-color: #dc3545; /* Red color */
+    color: white;
+  }
+
+</style>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+     <div class="text-center">
+  <img src="https://storage.googleapis.com/kaggle-datasets-images/3046306/5235720/22de81bb006109a7b044b3557d0713a2/dataset-card.png?t=2023-03-25-19-44-44" style="width: 200px; height: 200px;">
+</div>
+
+      <h2 class="text-center">Crop Recommendation</h2>
+      <hr/>
+      <form action="/index1" method="POST">
+        <div class="form-group">
+          <label for="feedback1">Temperature</label>
+          <input type="text" required name="Temperature" class="form-control" placeholder="Enter Temperature">
+        </div>
+        <div class="form-group">
+          <label for="Humidity">Humidity</label>
+          <input type="text" required name="Humidity" class="form-control" placeholder="Enter Humidity">
+        </div>
+        <div class="form-group">
+          <label for="PH">PH</label>
+          <input type="text" required name="PH" class="form-control" placeholder="Enter PH Value">
+        </div>
+        <div class="form-group">
+          <label for="Rainfall">Rainfall</label>
+          <input type="text" required name="Rainfall" class="form-control" placeholder="Enter Rainfall">
+        </div>
+        <div class="form-group">
+          <label for="Nitrogen">Nitrogen</label>
+          <input type="text" required name="Nitrogen" class="form-control" placeholder="Enter Nitrogen">
+        </div>
+        <div class="form-group">
+          <label for="Phosphorus">Phosphorus</label>
+          <input type="text" required name="Phosphorus" class="form-control" placeholder="Enter Phosphorus">
+        </div>
+        <div class="form-group">
+          <label for="Potassium">Potassium</label>
+          <input type="text" required name="Potassium" class="form-control" placeholder="Enter Potassium">
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <button class="btn btn-primary btn-block" type="submit">Predict</button>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-danger btn-block" href="/">Clear</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+</body>
+</html>
